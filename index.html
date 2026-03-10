@@ -227,7 +227,7 @@ nav {
 }
 .capture-form button:hover { opacity: 0.9; }
 .capture-note { margin-top: 14px; font-size: 12px; color: rgba(255,255,255,0.3); }
-.capture-success { display: none; color: rgba(255,255,255,0.85); font-size: 16px; font-weight: 300; margin-top: 16px; }
+.capture-success { display: none; font-size: 20px; font-weight: 500; color: var(--white); margin-top: 0; letter-spacing: -0.3px; }
 
 .hero-video-link {
   display: inline-block; margin-top: 22px;
@@ -287,7 +287,7 @@ footer { padding: 28px 64px; border-top: 1px solid var(--border); display: flex;
     <h1 class="hero-title">Intelligence systems<br>for solo founders.</h1>
     <p class="hero-sub">Data strategy, competitive intelligence, and AI-powered research — so you can make decisions that are grounded, not guessed.</p>
     <div class="hero-actions">
-      <a href="#services" class="btn-accent">let's chat</a>
+      <a href="#contact" class="btn-accent">let's chat</a>
       <div class="hero-note">
         <span class="avail-dot"></span>
         2 spots open in April
@@ -478,16 +478,17 @@ footer { padding: 28px 64px; border-top: 1px solid var(--border); display: flex;
 
 <!-- EMAIL CAPTURE -->
 <div class="capture" id="contact">
-  <h2>Ready to know your zone?</h2>
-  <p>Drop your email — I'll send a short intake form and we'll get started within 72 hours.</p>
+  <div id="capture-inner">
+    <h2>Ready to know your zone?</h2>
+    <p>Drop your email and I'll take it from there. Let's get started within 72hrs — if you're as excited as I am.</p>
 
-  <!-- Kit form — connected to form ID 9189353 -->
-  <form class="capture-form" action="https://app.kit.com/forms/9189353/subscriptions" method="POST" id="capture-form">
-    <input type="email" name="email_address" placeholder="your@email.com" required>
-    <button type="submit">let's go</button>
-  </form>
-  <p class="capture-note">No pitch calls. No 7-email sequence. Just a short form and a fast start.</p>
-  <p class="capture-success" id="capture-success">Got it — I'll be in touch soon.</p>
+    <!-- Kit form — connected to form ID 9189353 -->
+    <form class="capture-form" action="https://app.kit.com/forms/9189353/subscriptions" method="POST" id="capture-form">
+      <input type="email" name="email_address" placeholder="your@email.com" required>
+      <button type="submit">let's go</button>
+    </form>
+  </div>
+  <p class="capture-success" id="capture-success">Got it! I'll be in touch within 24 hours. ~Kate</p>
 </div>
 
 <!-- FOOTER -->
@@ -500,6 +501,7 @@ footer { padding: 28px 64px; border-top: 1px solid var(--border); display: flex;
 <script>
 const form = document.getElementById('capture-form');
 const success = document.getElementById('capture-success');
+const captureInner = document.getElementById('capture-inner');
 if (form) {
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
@@ -509,7 +511,7 @@ if (form) {
         headers: { 'Accept': 'application/json' }
       });
       if (res.ok) {
-        form.style.display = 'none';
+        captureInner.style.display = 'none';
         success.style.display = 'block';
       }
     } catch(err) { form.submit(); }
