@@ -71,7 +71,7 @@ nav {
 }
 
 .hero-title {
-  font-size: clamp(52px, 7vw, 96px);
+  font-size: clamp(38px, 4.8vw, 68px);
   font-weight: 600;
   line-height: 1.02;
   letter-spacing: -3px;
@@ -166,7 +166,7 @@ nav {
 .svc-link:hover { opacity: 0.7; }
 
 /* ── ABOUT ── */
-.about-grid { display: grid; grid-template-columns: 220px 1fr; gap: 64px; margin-top: 48px; align-items: start; }
+.about-grid { display: grid; grid-template-columns: 220px 1fr; gap: 64px; margin-top: 48px; align-items: start; max-width: 760px; }
 
 .about-photo {
   width: 100%; aspect-ratio: 3/4;
@@ -234,10 +234,10 @@ nav {
   font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.15s;
 }
 .hero-video-link:hover { color: var(--ink); }
-.video-section { padding: 80px 64px; border-bottom: 1px solid var(--border); }
+.video-section { padding: 80px 64px; border-bottom: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; text-align: center; }
 .video-section h2 { font-size: clamp(24px, 2.5vw, 36px); font-weight: 600; letter-spacing: -0.8px; margin-bottom: 10px; }
-.video-section p { font-size: 15px; color: var(--muted); font-weight: 300; max-width: 520px; margin-bottom: 32px; line-height: 1.65; }
-.video-wrap { max-width: 680px; aspect-ratio: 16/9; background: var(--off); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 12px; }
+.video-section p { font-size: 15px; color: var(--muted); font-weight: 300; max-width: 480px; margin-bottom: 32px; line-height: 1.65; }
+.video-wrap { width: 100%; max-width: 680px; aspect-ratio: 16/9; background: var(--off); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 12px; }
 .video-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
 .video-placeholder { display: flex; flex-direction: column; align-items: center; gap: 10px; }
 .video-placeholder svg { width: 48px; height: 48px; }
@@ -481,12 +481,9 @@ footer { padding: 28px 64px; border-top: 1px solid var(--border); display: flex;
   <h2>Ready to know your zone?</h2>
   <p>Drop your email — I'll send a short intake form and we'll get started within 72 hours.</p>
 
-  <!--
-    To activate: go to formspree.io, create a free account,
-    make a new form, and replace YOUR_FORM_ID with your actual ID.
-  -->
-  <form class="capture-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="capture-form">
-    <input type="email" name="email" placeholder="your@email.com" required>
+  <!-- Kit form — connected to form ID 9189353 -->
+  <form class="capture-form" action="https://app.kit.com/forms/9189353/subscriptions" method="POST" id="capture-form">
+    <input type="email" name="email_address" placeholder="your@email.com" required>
     <button type="submit">let's go</button>
   </form>
   <p class="capture-note">No pitch calls. No 7-email sequence. Just a short form and a fast start.</p>
