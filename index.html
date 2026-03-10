@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>zone studio — competitive intelligence for solo founders</title>
+<title>zone studio — intelligence systems for solo founders</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --ink:        #312721;
-  --paper:      #fdfaf6;
-  --off:        #f5f0e8;
-  --border:     #e3dace;
-  --muted:      #a08878;
-  --accent:     #c43d00;
-  --accent-dk:  #842323;
-  --terra:      #C17A5A;
-  --terra-lt:   #e8cabb;
-  --white:      #ffffff;
+  --ink:       #312721;
+  --paper:     #fdfaf6;
+  --off:       #f5f0e8;
+  --border:    #e3dace;
+  --muted:     #a08878;
+  --accent:    #c43d00;
+  --accent-dk: #842323;
+  --terra:     #C17A5A;
+  --terra-lt:  #e8cabb;
+  --white:     #ffffff;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -27,8 +27,6 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: 'DM Sans', sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
   overflow-x: hidden;
 }
 
@@ -36,264 +34,237 @@ body {
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; justify-content: space-between; align-items: center;
-  padding: 0 48px; height: 60px;
-  background: rgba(253, 250, 246, 0.92);
+  padding: 0 48px; height: 56px;
+  background: rgba(253,250,246,0.93);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
 }
 
-.nav-logo {
-  font-size: 16px; font-weight: 700; letter-spacing: -0.3px;
-  color: var(--ink); text-decoration: none;
-}
+.nav-logo { font-size: 16px; font-weight: 700; letter-spacing: -0.3px; color: var(--ink); text-decoration: none; }
 
-.nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
+.nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
 .nav-links a { font-size: 14px; font-weight: 400; color: var(--muted); text-decoration: none; transition: color 0.15s; }
 .nav-links a:hover { color: var(--ink); }
 
 .nav-cta {
-  background: var(--accent) !important;
-  color: var(--white) !important;
-  padding: 8px 18px !important;
-  border-radius: 6px;
-  font-weight: 600 !important;
-  display: flex; align-items: center; gap: 7px;
-  transition: background 0.15s !important;
+  background: var(--accent) !important; color: var(--white) !important;
+  padding: 8px 16px !important; border-radius: 6px;
+  font-weight: 600 !important; transition: background 0.15s !important;
 }
 .nav-cta:hover { background: var(--accent-dk) !important; }
 
-.dot { width: 6px; height: 6px; background: var(--white); border-radius: 50%; display: inline-block; flex-shrink: 0; }
-
 /* ── HERO ── */
-.hero { min-height: 100vh; padding-top: 60px; display: grid; grid-template-columns: 1fr 1fr; }
+.hero {
+  min-height: 100vh;
+  padding-top: 56px;
+  display: flex;
+  flex-direction: column;
+}
 
-.hero-left { padding: 100px 64px 80px; display: flex; flex-direction: column; justify-content: center; }
+.hero-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 64px;
+  max-width: 860px;
+}
 
 .hero-title {
-  font-size: clamp(44px, 5vw, 72px); font-weight: 600;
-  line-height: 1.05; letter-spacing: -2px; margin-bottom: 28px;
-  opacity: 0; animation: up 0.6s 0.1s ease forwards;
+  font-size: clamp(52px, 7vw, 96px);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -3px;
+  color: var(--ink);
+  margin-bottom: 24px;
+  opacity: 0;
+  animation: up 0.5s 0.1s ease forwards;
 }
 
 .hero-sub {
-  font-size: 17px; font-weight: 300; line-height: 1.65; color: var(--muted);
-  max-width: 400px; margin-bottom: 44px;
-  opacity: 0; animation: up 0.6s 0.25s ease forwards;
+  font-size: clamp(16px, 1.6vw, 19px);
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 520px;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: up 0.5s 0.22s ease forwards;
 }
 
-.hero-actions { display: flex; gap: 12px; align-items: center; opacity: 0; animation: up 0.6s 0.4s ease forwards; }
+.hero-actions {
+  display: flex; align-items: center; gap: 20px;
+  opacity: 0;
+  animation: up 0.5s 0.34s ease forwards;
+}
 
-.btn-primary {
+.btn-accent {
   background: var(--accent); color: var(--white);
-  padding: 14px 24px; font-size: 15px; font-weight: 600;
+  padding: 14px 28px; font-size: 15px; font-weight: 600;
   border-radius: 8px; text-decoration: none;
-  display: flex; align-items: center; gap: 8px;
+  display: inline-flex; align-items: center; gap: 8px;
   transition: background 0.15s;
 }
-.btn-primary:hover { background: var(--accent-dk); }
+.btn-accent:hover { background: var(--accent-dk); }
 
-.btn-ghost { font-size: 14px; color: var(--muted); text-decoration: none; padding: 14px 8px; transition: color 0.15s; }
-.btn-ghost:hover { color: var(--ink); }
-
-.avail-note {
-  margin-top: 28px; font-size: 13px; color: var(--muted);
-  display: flex; align-items: center; gap: 8px;
-  opacity: 0; animation: up 0.6s 0.5s ease forwards;
+.hero-note {
+  font-size: 13px; color: var(--muted); font-weight: 300;
+  display: flex; align-items: center; gap: 7px;
 }
-.avail-dot { width: 7px; height: 7px; background: #3ec97a; border-radius: 50%; flex-shrink: 0; }
+.avail-dot { width: 7px; height: 7px; background: #3ec97a; border-radius: 50%; }
 
-/* Hero right */
-.hero-right {
-  background: var(--off);
-  border-left: 1px solid var(--border);
-  display: flex; flex-direction: column; justify-content: center;
-  padding: 64px 56px; overflow: hidden;
+/* ── MARQUEE — bottom of hero, always visible ── */
+.marquee {
+  background: var(--ink);
+  padding: 13px 0;
+  overflow: hidden; white-space: nowrap;
+  flex-shrink: 0;
 }
-
-.hero-tag { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
-
-.hero-quote-block {
-  background: var(--accent-dk); color: var(--white); padding: 32px; border-radius: 12px; margin-bottom: 24px;
-  opacity: 0; animation: up 0.6s 0.5s ease forwards;
+.marquee-track { display: inline-block; animation: scroll 26s linear infinite; }
+.marquee-track span {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(227,218,206,0.65); margin: 0 32px;
 }
-.hq-text { font-size: 18px; font-weight: 300; line-height: 1.55; margin-bottom: 16px; }
-.hq-tag { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.4); }
-
-.mini-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; opacity: 0; animation: up 0.6s 0.65s ease forwards; }
-.mini-stat { background: var(--white); border: 1px solid var(--border); padding: 20px 16px; }
-.mini-stat:first-child { border-radius: 8px 0 0 8px; }
-.mini-stat:last-child { border-radius: 0 8px 8px 0; }
-.ms-num { font-size: 26px; font-weight: 700; letter-spacing: -1px; line-height: 1; margin-bottom: 4px; color: var(--accent); }
-.ms-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
-
-/* ── MARQUEE ── */
-.marquee { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 14px 0; overflow: hidden; white-space: nowrap; background: var(--ink); }
-.marquee-track { display: inline-block; animation: scroll 28s linear infinite; }
-.marquee-track span { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--border); margin: 0 36px; }
-.marquee-track span.sep { background: var(--accent); color: var(--white); padding: 1px 7px; border-radius: 3px; margin: 0 10px; font-size: 11px; }
+.marquee-track span.sep {
+  background: var(--accent); color: var(--white);
+  padding: 1px 6px; border-radius: 3px; margin: 0 8px; font-size: 10px;
+}
 
 /* ── SHARED ── */
+.section { padding: 80px 64px; border-bottom: 1px solid var(--border); }
+.section.alt { background: var(--off); }
 .lbl { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--terra); margin-bottom: 12px; }
+.section-h { font-size: clamp(28px, 3vw, 42px); font-weight: 600; letter-spacing: -1px; line-height: 1.1; }
 
 /* ── SERVICES ── */
-.services-header {
-  padding: 80px 64px 40px;
-  display: flex; justify-content: space-between; align-items: flex-end;
-  border-bottom: 1px solid var(--border);
-}
-.sh-h2 { font-size: clamp(30px, 3.5vw, 48px); font-weight: 600; letter-spacing: -1.5px; line-height: 1.1; margin-top: 12px; }
-.sh-right { font-size: 15px; color: var(--muted); font-weight: 300; max-width: 340px; text-align: right; line-height: 1.6; }
+.services-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; }
+.services-note { font-size: 14px; color: var(--muted); font-weight: 300; max-width: 260px; text-align: right; line-height: 1.6; }
 
-.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
 
 .svc {
-  padding: 40px 40px 48px;
-  border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
-  transition: background 0.2s; position: relative;
+  background: var(--white); border: 1px solid var(--border);
+  padding: 36px 32px 44px; position: relative;
+  transition: box-shadow 0.2s;
 }
-.svc:last-child { border-right: none; }
-.svc:hover { background: var(--off); }
+.svc:hover { box-shadow: 0 4px 20px rgba(49,39,33,0.07); }
 
-.svc-icon {
-  width: 40px; height: 40px; background: var(--off); border: 1px solid var(--border);
-  border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 28px;
-}
-.svc-icon svg { width: 18px; height: 18px; }
+.svc-bar { position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--terra-lt); }
+.svc-bar.hot { background: var(--accent); }
 
-.svc-tier { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
-.svc-name { font-size: 22px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 8px; }
-.svc-price { font-size: 15px; color: var(--muted); margin-bottom: 20px; }
-.svc-desc { font-size: 14px; line-height: 1.7; color: var(--muted); margin-bottom: 24px; font-weight: 300; }
+.svc-tier { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.svc-name { font-size: 22px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 6px; }
+.svc-price { font-size: 14px; color: var(--muted); margin-bottom: 18px; }
+.svc-desc { font-size: 14px; line-height: 1.7; color: var(--muted); margin-bottom: 22px; font-weight: 300; }
 
-.svc-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 32px; }
+.svc-list { list-style: none; display: flex; flex-direction: column; gap: 7px; margin-bottom: 28px; }
 .svc-list li { font-size: 13px; padding-left: 16px; position: relative; line-height: 1.5; }
-.svc-list li::before { content: '+'; position: absolute; left: 0; color: var(--terra); font-family: 'DM Mono', monospace; }
+.svc-list li::before { content: '+'; position: absolute; left: 0; color: var(--terra); font-family: 'DM Mono', monospace; font-size: 12px; }
 
-.svc-link { font-size: 13px; font-weight: 500; color: var(--accent); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; border-bottom: 1px solid var(--terra-lt); padding-bottom: 2px; transition: border-color 0.15s; }
-.svc-link:hover { border-color: var(--accent); }
-
-.featured-bar { position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--accent); }
-
-/* ── PROBLEM ── */
-.problem { background: var(--off); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 80px 64px; }
-.prob-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 56px; }
-.prob-list { display: flex; flex-direction: column; }
-
-.prob-item { display: grid; grid-template-columns: 48px 1fr; padding: 24px 0; border-bottom: 1px solid var(--border); align-items: start; }
-.prob-item:first-child { border-top: 1px solid var(--border); }
-.prob-n { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1px; color: var(--terra); padding-top: 2px; }
-.prob-body strong { display: block; font-size: 15px; font-weight: 500; margin-bottom: 4px; }
-.prob-body p { font-size: 13px; color: var(--muted); line-height: 1.6; font-weight: 300; }
-
-.prob-right h3 { font-size: 26px; font-weight: 600; letter-spacing: -0.8px; line-height: 1.25; margin-bottom: 20px; }
-.prob-right p { font-size: 15px; color: var(--muted); line-height: 1.7; font-weight: 300; margin-bottom: 32px; }
-
-.tag-row { display: flex; flex-wrap: wrap; gap: 8px; }
-.tag { border: 1px solid var(--border); padding: 6px 14px; font-size: 12px; border-radius: 20px; color: var(--ink); background: var(--white); }
+.svc-link { font-size: 13px; font-weight: 600; color: var(--accent); text-decoration: none; transition: opacity 0.15s; }
+.svc-link:hover { opacity: 0.7; }
 
 /* ── ABOUT ── */
-.about { padding: 80px 64px; border-bottom: 1px solid var(--border); }
+.about-grid { display: grid; grid-template-columns: 220px 1fr; gap: 64px; margin-top: 48px; align-items: start; }
 
-.about-inner {
-  display: grid; grid-template-columns: 260px 1fr;
-  gap: 80px; margin-top: 48px; align-items: start;
-}
-
-.photo-placeholder {
+.about-photo {
   width: 100%; aspect-ratio: 3/4;
+  border-radius: 10px; overflow: hidden;
   background: var(--off); border: 1px solid var(--border);
-  border-radius: 12px;
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
 }
-.photo-placeholder svg { width: 32px; height: 32px; opacity: 0.3; }
-.photo-placeholder span { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); opacity: 0.6; }
+.about-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-.about-text h2 { font-size: 36px; font-weight: 600; letter-spacing: -1px; line-height: 1.15; margin-bottom: 28px; }
-.about-text p { font-size: 16px; font-weight: 300; color: var(--muted); line-height: 1.75; margin-bottom: 18px; }
+.about-text h2 { font-size: 32px; font-weight: 600; letter-spacing: -0.8px; line-height: 1.2; margin-bottom: 22px; }
+.about-text p { font-size: 16px; font-weight: 300; color: var(--muted); line-height: 1.75; margin-bottom: 16px; }
 .about-text p strong { color: var(--ink); font-weight: 500; }
-
-.about-cta-line {
-  margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--border);
-  display: flex; align-items: center; gap: 16px;
-}
-.about-cta-text { font-size: 15px; font-weight: 500; color: var(--ink); line-height: 1.5; }
+.about-text p:last-child { margin-bottom: 0; }
 
 /* ── HOW ── */
-.how { padding: 80px 64px; border-bottom: 1px solid var(--border); background: var(--white); }
-.how-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 56px; align-items: start; }
+.how-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; margin-top: 48px; }
 
 .steps { display: flex; flex-direction: column; }
-.step { display: grid; grid-template-columns: 48px 1fr; padding: 24px 0; border-bottom: 1px solid var(--border); }
+.step { display: grid; grid-template-columns: 44px 1fr; padding: 22px 0; border-bottom: 1px solid var(--border); }
 .step:first-child { border-top: 1px solid var(--border); }
-.step-n { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1px; color: var(--terra); padding-top: 3px; }
-.step-title { font-size: 15px; font-weight: 500; margin-bottom: 6px; }
+.step-n { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1px; color: var(--terra); padding-top: 2px; }
+.step-title { font-size: 15px; font-weight: 500; margin-bottom: 5px; }
 .step-desc { font-size: 13px; color: var(--muted); line-height: 1.65; font-weight: 300; }
 
-.sample-card { background: var(--off); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
-.sc-header { background: var(--ink); color: var(--white); padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; }
-.sc-title { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.4); }
-.sc-badge { background: var(--terra); color: var(--white); font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 4px; }
-.sc-body { padding: 20px 24px; }
-.sc-row { display: flex; justify-content: space-between; padding: 11px 0; border-bottom: 1px solid var(--border); font-size: 13px; gap: 16px; }
+.sample-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.sc-head { background: var(--ink); padding: 14px 22px; display: flex; justify-content: space-between; align-items: center; }
+.sc-head-lbl { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+.sc-badge { background: var(--terra); color: var(--white); font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 4px; }
+.sc-body { padding: 18px 22px; }
+.sc-row { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 13px; gap: 12px; }
 .sc-row:last-of-type { border-bottom: none; }
 .sc-key { color: var(--muted); font-weight: 300; white-space: nowrap; }
 .sc-val { font-weight: 500; text-align: right; }
-.sc-val.green { color: #2d7a4a; }
-.sc-val.warn { color: var(--accent); }
-.sc-val.red { color: var(--accent-dk); }
-.sc-rec { background: var(--ink); color: var(--white); padding: 16px 24px; font-size: 13px; font-weight: 300; line-height: 1.6; }
-.sc-rec strong { color: var(--terra-lt); font-weight: 500; }
+.sc-val.g { color: #2d7a4a; }
+.sc-val.w { color: var(--accent); }
+.sc-val.r { color: var(--accent-dk); }
+.sc-foot { background: var(--ink); color: var(--white); padding: 14px 22px; font-size: 13px; font-weight: 300; line-height: 1.6; }
+.sc-foot strong { color: var(--terra-lt); font-weight: 500; }
 
-/* ── CTA ── */
-.cta { background: var(--accent-dk); padding: 100px 64px; text-align: center; }
-.cta h2 { font-size: clamp(32px, 4vw, 56px); font-weight: 600; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 20px; color: var(--white); }
-.cta p { font-size: 16px; color: rgba(255,255,255,0.65); font-weight: 300; max-width: 420px; margin: 0 auto 44px; line-height: 1.65; }
+/* ── CAPTURE ── */
+.capture { background: var(--accent-dk); padding: 80px 64px; text-align: center; }
+.capture h2 { font-size: clamp(28px, 3.5vw, 48px); font-weight: 600; letter-spacing: -1.2px; color: var(--white); margin-bottom: 14px; line-height: 1.1; }
+.capture p { font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.6); max-width: 400px; margin: 0 auto 36px; line-height: 1.65; }
 
-.cta-form { display: flex; gap: 10px; justify-content: center; max-width: 460px; margin: 0 auto; }
-.cta-input {
-  flex: 1; padding: 14px 18px; font-family: 'DM Sans', sans-serif; font-size: 15px;
-  background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);
-  border-radius: 8px; color: var(--white); outline: none; transition: border-color 0.15s;
+.capture-form { display: flex; gap: 10px; justify-content: center; max-width: 440px; margin: 0 auto; }
+.capture-form input[type="email"] {
+  flex: 1; padding: 13px 18px;
+  font-family: 'DM Sans', sans-serif; font-size: 15px;
+  background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 7px; color: var(--white); outline: none; transition: border-color 0.15s;
 }
-.cta-input:focus { border-color: rgba(255,255,255,0.6); }
-.cta-input::placeholder { color: rgba(255,255,255,0.4); }
-.cta-note { margin-top: 16px; font-size: 12px; color: rgba(255,255,255,0.4); font-weight: 300; }
-
-.btn-cta-white {
+.capture-form input[type="email"]:focus { border-color: rgba(255,255,255,0.55); }
+.capture-form input[type="email"]::placeholder { color: rgba(255,255,255,0.35); }
+.capture-form button {
   background: var(--white); color: var(--accent-dk);
-  padding: 14px 24px; font-size: 15px; font-weight: 700;
-  border-radius: 8px; text-decoration: none; white-space: nowrap;
-  transition: opacity 0.15s;
+  padding: 13px 24px; font-family: 'DM Sans', sans-serif;
+  font-size: 15px; font-weight: 700;
+  border: none; border-radius: 7px; cursor: pointer; white-space: nowrap; transition: opacity 0.15s;
 }
-.btn-cta-white:hover { opacity: 0.9; }
+.capture-form button:hover { opacity: 0.9; }
+.capture-note { margin-top: 14px; font-size: 12px; color: rgba(255,255,255,0.3); }
+.capture-success { display: none; color: rgba(255,255,255,0.85); font-size: 16px; font-weight: 300; margin-top: 16px; }
 
+.hero-video-link {
+  display: inline-block; margin-top: 22px;
+  font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.15s;
+}
+.hero-video-link:hover { color: var(--ink); }
+.video-section { padding: 80px 64px; border-bottom: 1px solid var(--border); }
+.video-section h2 { font-size: clamp(24px, 2.5vw, 36px); font-weight: 600; letter-spacing: -0.8px; margin-bottom: 10px; }
+.video-section p { font-size: 15px; color: var(--muted); font-weight: 300; max-width: 520px; margin-bottom: 32px; line-height: 1.65; }
+.video-wrap { max-width: 680px; aspect-ratio: 16/9; background: var(--off); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 12px; }
+.video-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
+.video-placeholder { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.video-placeholder svg { width: 48px; height: 48px; }
+.video-placeholder span { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); opacity: 0.4; }
 /* ── FOOTER ── */
-footer { padding: 32px 64px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: var(--paper); }
+footer { padding: 28px 64px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
 .footer-logo { font-size: 16px; font-weight: 700; letter-spacing: -0.3px; }
 .footer-note { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
 
 /* ── ANIMATIONS ── */
-@keyframes up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* ── RESPONSIVE ── */
-@media (max-width: 900px) {
-  nav { padding: 0 24px; }
+@media (max-width: 860px) {
+  nav { padding: 0 20px; }
   .nav-links { display: none; }
-  .hero, .prob-grid, .how-grid { grid-template-columns: 1fr; }
-  .hero-left { padding: 60px 24px 40px; }
-  .hero-right { border-left: none; border-top: 1px solid var(--border); padding: 40px 24px; }
-  .services-header { flex-direction: column; align-items: flex-start; gap: 16px; padding: 48px 24px 32px; }
-  .sh-right { text-align: left; }
-  .services-grid { grid-template-columns: 1fr; }
-  .svc { border-right: none; }
-  .problem, .about, .how, .cta { padding-left: 24px; padding-right: 24px; }
-  .services-header { padding-left: 24px; padding-right: 24px; }
-  .about-inner { grid-template-columns: 1fr; gap: 32px; }
-  .photo-placeholder { aspect-ratio: 1/1; max-width: 200px; }
-  footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
-  .cta-form { flex-direction: column; }
-  .prob-grid { gap: 40px; }
+  .hero-body { padding: 40px 24px; }
+  .section { padding: 56px 24px; }
+  .services-head { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .services-note { text-align: left; }
+  .services-grid, .how-grid { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  .about-photo { aspect-ratio: 1; max-width: 180px; }
+  .capture { padding: 56px 24px; }
+  .capture-form { flex-direction: column; }
+  footer { padding: 24px; flex-direction: column; gap: 10px; text-align: center; }
 }
 </style>
 </head>
@@ -306,89 +277,67 @@ footer { padding: 32px 64px; border-top: 1px solid var(--border); display: flex;
     <li><a href="#services">services</a></li>
     <li><a href="#about">about</a></li>
     <li><a href="#how">process</a></li>
-    <li><a href="#contact" class="nav-cta"><span class="dot"></span> book a call</a></li>
+    <li><a href="#contact" class="nav-cta">book a call</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-left">
-    <h1 class="hero-title">Competitive<br>intelligence for<br>solo founders.</h1>
-    <p class="hero-sub">I turn market data — your competitors', your customers', your niche's — into clear decisions you can actually act on.</p>
+<div class="hero">
+  <div class="hero-body">
+    <h1 class="hero-title">Intelligence systems<br>for solo founders.</h1>
+    <p class="hero-sub">Data strategy, competitive intelligence, and AI-powered research — so you can make decisions that are grounded, not guessed.</p>
     <div class="hero-actions">
-      <a href="#services" class="btn-primary"><span class="dot"></span> see how it works</a>
-      <a href="#contact" class="btn-ghost">book a call →</a>
+      <a href="#services" class="btn-accent">let's chat</a>
+      <div class="hero-note">
+        <span class="avail-dot"></span>
+        2 spots open in April
+      </div>
     </div>
-    <div class="avail-note">
-      <span class="avail-dot"></span>
-      available for new clients — 2 spots open in April
-    </div>
+    <a href="#video" class="hero-video-link">not sure if we’re a fit? watch a 2-min intro first →</a>
   </div>
-  <div class="hero-right">
-    <div class="hero-tag">what you get</div>
-    <div class="hero-quote-block">
-      <p class="hq-text">"You don't need more data. You need the right data — interpreted by someone who understands what you're building."</p>
-      <span class="hq-tag">zone studio principle</span>
-    </div>
-    <div class="mini-stats">
-      <div class="mini-stat">
-        <div class="ms-num">48h</div>
-        <div class="ms-label">first delivery</div>
-      </div>
-      <div class="mini-stat">
-        <div class="ms-num">3 tiers</div>
-        <div class="ms-label">start anywhere</div>
-      </div>
-      <div class="mini-stat">
-        <div class="ms-num">solo-built</div>
-        <div class="ms-label">no agency fat</div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- MARQUEE -->
-<div class="marquee">
-  <div class="marquee-track">
-    <span>market mapping</span><span class="sep">+</span>
-    <span>competitor analysis</span><span class="sep">+</span>
-    <span>pricing intelligence</span><span class="sep">+</span>
-    <span>customer data review</span><span class="sep">+</span>
-    <span>app store signals</span><span class="sep">+</span>
-    <span>positioning clarity</span><span class="sep">+</span>
-    <span>AI-augmented research</span><span class="sep">+</span>
-    <span>market mapping</span><span class="sep">+</span>
-    <span>competitor analysis</span><span class="sep">+</span>
-    <span>pricing intelligence</span><span class="sep">+</span>
-    <span>customer data review</span><span class="sep">+</span>
-    <span>app store signals</span><span class="sep">+</span>
-    <span>positioning clarity</span><span class="sep">+</span>
-    <span>AI-augmented research</span><span class="sep">+</span>
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>competitive intelligence</span><span class="sep">+</span>
+      <span>intelligence systems</span><span class="sep">+</span>
+      <span>data strategy</span><span class="sep">+</span>
+      <span>AI research</span><span class="sep">+</span>
+      <span>market mapping</span><span class="sep">+</span>
+      <span>pricing intelligence</span><span class="sep">+</span>
+      <span>customer data review</span><span class="sep">+</span>
+      <span>positioning clarity</span><span class="sep">+</span>
+      <span>competitive intelligence</span><span class="sep">+</span>
+      <span>intelligence systems</span><span class="sep">+</span>
+      <span>data strategy</span><span class="sep">+</span>
+      <span>AI research</span><span class="sep">+</span>
+      <span>market mapping</span><span class="sep">+</span>
+      <span>pricing intelligence</span><span class="sep">+</span>
+      <span>customer data review</span><span class="sep">+</span>
+      <span>positioning clarity</span><span class="sep">+</span>
+    </div>
   </div>
 </div>
 
 <!-- SERVICES -->
-<div id="services">
-  <div class="services-header">
+<div class="section" id="services">
+  <div class="services-head">
     <div>
       <div class="lbl">services</div>
-      <h2 class="sh-h2">Three ways<br>to work together.</h2>
+      <h2 class="section-h">Three ways to work together.</h2>
     </div>
-    <p class="sh-right">Start where you are. Each tier builds on the last — upgrade as your needs grow.</p>
+    <p class="services-note">Start anywhere. Each tier builds on the last.</p>
   </div>
   <div class="services-grid">
 
     <div class="svc">
-      <div class="svc-icon">
-        <svg viewBox="0 0 18 18" fill="none"><rect x="2" y="2" width="6" height="6" rx="1" fill="#312721"/><rect x="10" y="2" width="6" height="6" rx="1" fill="#312721" opacity="0.3"/><rect x="2" y="10" width="6" height="6" rx="1" fill="#312721" opacity="0.3"/><rect x="10" y="10" width="6" height="6" rx="1" fill="#312721" opacity="0.55"/></svg>
-      </div>
+      <div class="svc-bar"></div>
       <div class="svc-tier">tier 01 — one-time</div>
       <div class="svc-name">Data Audit</div>
       <div class="svc-price">from $300</div>
-      <p class="svc-desc">A comprehensive read of your market — including your own data. App store reviews, customer feedback, competitor positioning, pricing benchmarks. Everything structured into a picture you can act on.</p>
+      <p class="svc-desc">A comprehensive read of your market and your own data — app reviews, customer feedback, competitor moves, pricing. Structured into something you can actually use.</p>
       <ul class="svc-list">
         <li>Competitor mapping (5–8 players)</li>
-        <li>Your customer data review (reviews, feedback, churn signals)</li>
+        <li>Your customer data review</li>
         <li>Pricing and positioning benchmarks</li>
         <li>Gap and opportunity summary</li>
         <li>Delivered in 48–72 hours</li>
@@ -396,20 +345,16 @@ footer { padding: 32px 64px; border-top: 1px solid var(--border); display: flex;
       <a href="#contact" class="svc-link">Get the audit →</a>
     </div>
 
-    <div class="svc" style="background: var(--off);">
-      <div class="featured-bar"></div>
-      <div class="svc-icon" style="background: white;">
-        <svg viewBox="0 0 18 18" fill="none"><circle cx="9" cy="4" r="2" fill="#312721"/><circle cx="4" cy="13" r="2" fill="#312721" opacity="0.5"/><circle cx="14" cy="13" r="2" fill="#312721" opacity="0.5"/><circle cx="9" cy="10" r="2" fill="#312721" opacity="0.8"/></svg>
-      </div>
+    <div class="svc">
+      <div class="svc-bar hot"></div>
       <div class="svc-tier">tier 02 — monthly · most popular</div>
       <div class="svc-name">Intelligence System</div>
       <div class="svc-price">$800 / month</div>
-      <p class="svc-desc">An ongoing intelligence system built around your business. Monthly research cycles, a custom dashboard, competitor signals, and customer data trends — yours to keep and build on.</p>
+      <p class="svc-desc">An ongoing intelligence system built around your business — market signals, competitor tracking, customer data trends, and a custom dashboard that's yours to keep.</p>
       <ul class="svc-list">
         <li>Everything in Data Audit</li>
-        <li>Monthly competitor and market update</li>
+        <li>Monthly market and competitor update</li>
         <li>Custom monitoring dashboard</li>
-        <li>Trend signals relevant to your niche</li>
         <li>Async Q&amp;A — ask anything, anytime</li>
         <li>30-min strategy call per month</li>
       </ul>
@@ -417,124 +362,72 @@ footer { padding: 32px 64px; border-top: 1px solid var(--border); display: flex;
     </div>
 
     <div class="svc">
-      <div class="svc-icon">
-        <svg viewBox="0 0 18 18" fill="none"><circle cx="5" cy="9" r="2" fill="#312721" opacity="0.4"/><circle cx="13" cy="9" r="2" fill="#312721" opacity="0.4"/><circle cx="9" cy="5" r="2" fill="#312721"/><circle cx="9" cy="13" r="2" fill="#312721" opacity="0.7"/></svg>
-      </div>
+      <div class="svc-bar"></div>
       <div class="svc-tier">tier 03 — retainer</div>
       <div class="svc-name">Intelligence Partner</div>
       <div class="svc-price">$1,500 / month</div>
-      <p class="svc-desc">Full-scope partnership. I'm actively in your corner — tracking, interpreting, and advising as a dedicated strategic resource, not just a report-sender.</p>
+      <p class="svc-desc">Full-scope partnership. Data strategy, AI tool selection, competitive research on demand — actively in your corner, not just sending reports.</p>
       <ul class="svc-list">
         <li>Everything in Intelligence System</li>
         <li>Weekly strategic briefing</li>
+        <li>Data and AI strategy advisory</li>
         <li>Deep-dive research on demand</li>
-        <li>Pricing and positioning strategy support</li>
-        <li>Decision support for key milestones</li>
         <li>Priority turnaround (24h)</li>
       </ul>
       <a href="#contact" class="svc-link">Become a partner →</a>
     </div>
-  </div>
-</div>
 
-<!-- PROBLEM -->
-<div class="problem" id="problem">
-  <div class="lbl">why it matters</div>
-  <h2 style="font-size: clamp(28px, 3vw, 44px); font-weight:600; letter-spacing:-1px; line-height:1.1;">Flying blind is expensive.</h2>
-  <div class="prob-grid">
-    <div class="prob-list">
-      <div class="prob-item">
-        <span class="prob-n">01</span>
-        <div class="prob-body">
-          <strong>You're guessing on pricing</strong>
-          <p>Without real market data, you either leave money on the table or scare off your best customers.</p>
-        </div>
-      </div>
-      <div class="prob-item">
-        <span class="prob-n">02</span>
-        <div class="prob-body">
-          <strong>You can't see around corners</strong>
-          <p>Competitors launch, shift positioning, or enter your niche — and you find out last.</p>
-        </div>
-      </div>
-      <div class="prob-item">
-        <span class="prob-n">03</span>
-        <div class="prob-body">
-          <strong>Your own data is untouched</strong>
-          <p>App reviews, user feedback, churn signals — all sitting there, telling you something. You just haven't had time to look.</p>
-        </div>
-      </div>
-      <div class="prob-item">
-        <span class="prob-n">04</span>
-        <div class="prob-body">
-          <strong>Research eats your building time</strong>
-          <p>As a solo founder, hours spent on research are hours not spent on the thing only you can do.</p>
-        </div>
-      </div>
-    </div>
-    <div class="prob-right">
-      <h3>What you need is clarity — not more information.</h3>
-      <p>Zone Studio gives you the intelligence layer to make strategic calls with confidence. Not gut feel, not vibes — structured data, interpreted by someone who understands what you're building.</p>
-      <p>AI-powered research tools plus human judgment. Fast, specific, built around what you're actually deciding.</p>
-      <div class="tag-row">
-        <span class="tag">no fluff</span>
-        <span class="tag">founder-speed</span>
-        <span class="tag">your data too</span>
-        <span class="tag">AI + human</span>
-        <span class="tag">decision-ready</span>
-      </div>
-    </div>
   </div>
 </div>
 
 <!-- ABOUT -->
-<div class="about" id="about">
+<div class="section alt" id="about">
   <div class="lbl">about</div>
-  <div class="about-inner">
-    <div>
-      <div class="photo-placeholder">
-        <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="12" r="5" stroke="#a08878" stroke-width="1.5"/><path d="M6 26c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke="#a08878" stroke-width="1.5" stroke-linecap="round"/></svg>
-        <span>photo</span>
-      </div>
+  <div class="about-grid">
+
+    <div class="about-photo">
+      <img
+        src="https://raw.githubusercontent.com/kateintheloops/zonestudio/main/about-me-photo.jpg"
+        alt="Kate"
+        onerror="this.parentElement.style.background='var(--off)'; this.style.display='none';"
+      >
     </div>
+
     <div class="about-text">
       <h2>Hey, I'm Kate.</h2>
       <p>I build intelligence systems for startups and create content that makes complex data ideas actually make sense.</p>
       <p>My background is unusual: <strong>design + analytics</strong>. That means I know how to make data systems people actually want to use — and I know which questions actually drive decisions.</p>
       <p>If your team is making decisions based on gut feel because getting real answers takes too long, let's talk.</p>
-      <div class="about-cta-line">
-        <div class="about-cta-text">Ready to stop guessing?</div>
-        <a href="#contact" class="btn-primary" style="padding: 12px 20px; font-size: 14px;"><span class="dot"></span> let's talk</a>
-      </div>
     </div>
+
   </div>
 </div>
 
 <!-- HOW -->
-<div class="how" id="how">
+<div class="section" id="how">
   <div class="lbl">process</div>
-  <h2 style="font-size: clamp(28px, 3vw, 44px); font-weight:600; letter-spacing:-1px; line-height:1.1; margin-bottom:0;">How it actually works.</h2>
+  <h2 class="section-h" style="margin-bottom: 0;">How it actually works.</h2>
   <div class="how-grid">
     <div class="steps">
       <div class="step">
         <span class="step-n">01</span>
         <div>
           <div class="step-title">You share your context</div>
-          <div class="step-desc">A short brief: what you're building, who you're selling to, what decisions are live right now. 15 minutes of your time.</div>
+          <div class="step-desc">What you're building, who you're selling to, what decisions are live right now. A short brief — 15 minutes.</div>
         </div>
       </div>
       <div class="step">
         <span class="step-n">02</span>
         <div>
-          <div class="step-title">I map your competitive zone</div>
-          <div class="step-desc">AI-powered research plus structured analysis. Competitors, your own customer data, pricing benchmarks, positioning signals — all pulled together.</div>
+          <div class="step-title">I map your zone</div>
+          <div class="step-desc">AI-powered research plus structured analysis. Competitors, customer data, pricing benchmarks, market signals — interpreted, not just collected.</div>
         </div>
       </div>
       <div class="step">
         <span class="step-n">03</span>
         <div>
           <div class="step-title">You get a tight deliverable</div>
-          <div class="step-desc">No 40-slide decks. A focused, annotated document with clear takeaways — written for a founder, not a boardroom.</div>
+          <div class="step-desc">No 40-slide decks. A focused document with clear takeaways — written for a founder, not a boardroom.</div>
         </div>
       </div>
       <div class="step">
@@ -545,42 +438,87 @@ footer { padding: 32px 64px; border-top: 1px solid var(--border); display: flex;
         </div>
       </div>
     </div>
+
     <div class="sample-card">
-      <div class="sc-header">
-        <span class="sc-title">sample · competitive snapshot</span>
+      <div class="sc-head">
+        <span class="sc-head-lbl">sample · intelligence snapshot</span>
         <span class="sc-badge">example output</span>
       </div>
       <div class="sc-body">
         <div class="sc-row"><span class="sc-key">niche</span><span class="sc-val">B2B SaaS onboarding</span></div>
         <div class="sc-row"><span class="sc-key">competitors tracked</span><span class="sc-val">7 players</span></div>
-        <div class="sc-row"><span class="sc-key">market avg. price</span><span class="sc-val">$89 – $149/mo</span></div>
-        <div class="sc-row"><span class="sc-key">your position</span><span class="sc-val warn">underpriced by ~30%</span></div>
-        <div class="sc-row"><span class="sc-key">top customer complaint</span><span class="sc-val red">onboarding too slow (48 reviews)</span></div>
-        <div class="sc-row"><span class="sc-key">unserved segment</span><span class="sc-val green">no-code founders, underserved</span></div>
-        <div class="sc-row"><span class="sc-key">competitor signal</span><span class="sc-val warn">Appcues raising prices Q1</span></div>
+        <div class="sc-row"><span class="sc-key">market avg. price</span><span class="sc-val">$89–$149/mo</span></div>
+        <div class="sc-row"><span class="sc-key">your position</span><span class="sc-val w">underpriced by ~30%</span></div>
+        <div class="sc-row"><span class="sc-key">top customer complaint</span><span class="sc-val r">onboarding too slow (48 reviews)</span></div>
+        <div class="sc-row"><span class="sc-key">unserved segment</span><span class="sc-val g">no-code founders, wide open</span></div>
+        <div class="sc-row"><span class="sc-key">competitor signal</span><span class="sc-val w">Appcues raising prices Q1</span></div>
       </div>
-      <div class="sc-rec"><strong>recommendation:</strong> test a $129 tier targeting no-code founders — before Appcues pivots. Your own reviews show speed is the gap to close first.</div>
+      <div class="sc-foot"><strong>recommendation:</strong> test a $129 tier for no-code founders before Appcues pivots — your own reviews show speed is the gap to close first.</div>
     </div>
   </div>
 </div>
 
-<!-- CTA -->
-<div class="cta" id="contact">
-  <h2>Ready to know your zone?</h2>
-  <p>Drop your email and I'll send you a short intake form. Most clients have their first deliverable within 72 hours.</p>
-  <div class="cta-form">
-    <input type="email" class="cta-input" placeholder="your@email.com">
-    <a href="#" class="btn-cta-white">let's go</a>
+<!-- VIDEO -->
+<div class="video-section" id="video">
+  <div class="lbl">before you reach out</div>
+  <h2>Is this the right fit?</h2>
+  <p>Watch this 2-minute intro to understand exactly who I work with, what the engagement looks like, and who this is <em>not</em> for.</p>
+  <div class="video-wrap">
+    <!--
+      TO ADD YOUR VIDEO, replace the placeholder div with:
+      Loom:    <iframe src="https://www.loom.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+      YouTube: <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+    -->
+    <div class="video-placeholder">
+      <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#a08878" stroke-width="1.5"/><polygon points="20,16 34,24 20,32" fill="#a08878" opacity="0.35"/></svg>
+      <span>video coming soon</span>
+    </div>
   </div>
-  <p class="cta-note">No pitch calls. No 7-email sequence. Just a short form and a fast start.</p>
+</div>
+
+<!-- EMAIL CAPTURE -->
+<div class="capture" id="contact">
+  <h2>Ready to know your zone?</h2>
+  <p>Drop your email — I'll send a short intake form and we'll get started within 72 hours.</p>
+
+  <!--
+    To activate: go to formspree.io, create a free account,
+    make a new form, and replace YOUR_FORM_ID with your actual ID.
+  -->
+  <form class="capture-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="capture-form">
+    <input type="email" name="email" placeholder="your@email.com" required>
+    <button type="submit">let's go</button>
+  </form>
+  <p class="capture-note">No pitch calls. No 7-email sequence. Just a short form and a fast start.</p>
+  <p class="capture-success" id="capture-success">Got it — I'll be in touch soon.</p>
 </div>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">zone studio</div>
-  <div class="footer-note">competitive intelligence · solo founders</div>
+  <div class="footer-note">intelligence systems · data &amp; AI strategy</div>
   <div class="footer-note">2026</div>
 </footer>
+
+<script>
+const form = document.getElementById('capture-form');
+const success = document.getElementById('capture-success');
+if (form) {
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST', body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        success.style.display = 'block';
+      }
+    } catch(err) { form.submit(); }
+  });
+}
+</script>
 
 </body>
 </html>
