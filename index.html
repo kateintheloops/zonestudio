@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>zone studio</title>
+<title>zone studio — intelligence systems for solo founders</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -226,7 +226,6 @@ nav {
   border: none; border-radius: 7px; cursor: pointer; white-space: nowrap; transition: opacity 0.15s;
 }
 .capture-form button:hover { opacity: 0.9; }
-.capture-note { margin-top: 14px; font-size: 12px; color: rgba(255,255,255,0.3); }
 .capture-success { display: none; font-size: 20px; font-weight: 500; color: var(--white); margin-top: 0; letter-spacing: -0.3px; }
 
 .hero-video-link {
@@ -263,7 +262,7 @@ footer { padding: 28px 64px; border-top: 1px solid var(--border); display: flex;
   .about-grid { grid-template-columns: 1fr; gap: 32px; }
   .about-photo { aspect-ratio: 1; max-width: 180px; }
   .capture { padding: 56px 24px; }
-  .capture-form { flex-direction: column; }
+  /* .capture-form-unused { flex-direction: column; }
   footer { padding: 24px; flex-direction: column; gap: 10px; text-align: center; }
 }
 </style>
@@ -333,7 +332,7 @@ footer { padding: 28px 64px; border-top: 1px solid var(--border); display: flex;
       <div class="svc-bar"></div>
       <div class="svc-tier">tier 01 — one-time</div>
       <div class="svc-name">Data Audit</div>
-      <div class="svc-price">contact for pricing</div>
+      <div class="svc-price">from $300</div>
       <p class="svc-desc">A comprehensive read of your market and your own data — app reviews, customer feedback, competitor moves, pricing. Structured into something you can actually use.</p>
       <ul class="svc-list">
         <li>Competitor mapping (5–8 players)</li>
@@ -349,7 +348,7 @@ footer { padding: 28px 64px; border-top: 1px solid var(--border); display: flex;
       <div class="svc-bar hot"></div>
       <div class="svc-tier">tier 02 — monthly · most popular</div>
       <div class="svc-name">Intelligence System</div>
-      <div class="svc-price">contact for pricing</div>
+      <div class="svc-price">$800 / month</div>
       <p class="svc-desc">An ongoing intelligence system built around your business — market signals, competitor tracking, customer data trends, and a custom dashboard that's yours to keep.</p>
       <ul class="svc-list">
         <li>Everything in Data Audit</li>
@@ -365,7 +364,7 @@ footer { padding: 28px 64px; border-top: 1px solid var(--border); display: flex;
       <div class="svc-bar"></div>
       <div class="svc-tier">tier 03 — retainer</div>
       <div class="svc-name">Intelligence Partner</div>
-      <div class="svc-price">contact for pricing</div>
+      <div class="svc-price">$1,500 / month</div>
       <p class="svc-desc">Full-scope partnership. Data strategy, AI tool selection, competitive research on demand — actively in your corner, not just sending reports.</p>
       <ul class="svc-list">
         <li>Everything in Intelligence System</li>
@@ -481,10 +480,18 @@ footer { padding: 28px 64px; border-top: 1px solid var(--border); display: flex;
   <div id="capture-inner">
     <h2>Ready to know your zone?</h2>
     <p>Drop your email and I'll take it from there. Let's get started within 72hrs — if you're as excited as I am.</p>
+    <!-- Web3Forms -->
+    <form class="capture-form" id="capture-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="665d8394-8a36-43db-8480-69433f0ed13b">
+      <input type="hidden" name="subject" value="New Zone Studio enquiry">
+      <input type="hidden" name="redirect" value="">
+      <input type="email" name="email" placeholder="kate2workdn@gmail.com" required>
+      <button type="submit">let's go</button>
+    </form>
+  </div>
+  <p class="capture-success" id="capture-success">Got it! I'll be in touch within 24 hours. ~Kate</p>
+</div>
 
-    <!-- Tally form — connected -->
-<p>Comming soon</p>
-    
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">zone studio</div>
