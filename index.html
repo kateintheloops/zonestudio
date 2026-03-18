@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>zone studio</title>
+<title>zone studio — intelligence systems for solo founders</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -47,11 +47,11 @@ nav {
 .nav-links a:hover { color: var(--ink); }
 
 .nav-cta {
-  background: var(--accent) !important; color: var(--white) !important;
+  background: var(--accent-dk) !important; color: var(--white) !important;
   padding: 8px 16px !important; border-radius: 6px;
   font-weight: 600 !important; transition: background 0.15s !important;
 }
-.nav-cta:hover { background: var(--accent-dk) !important; }
+.nav-cta:hover { background: #6a1c1c !important; }
 
 /* ── HERO ── */
 .hero {
@@ -99,13 +99,13 @@ nav {
 }
 
 .btn-accent {
-  background: var(--accent); color: var(--white);
+  background: var(--accent-dk); color: var(--white);
   padding: 14px 28px; font-size: 15px; font-weight: 600;
   border-radius: 8px; text-decoration: none;
   display: inline-flex; align-items: center; gap: 8px;
   transition: background 0.15s;
 }
-.btn-accent:hover { background: var(--accent-dk); }
+.btn-accent:hover { background: #6a1c1c; }
 
 .hero-note {
   font-size: 13px; color: var(--muted); font-weight: 300;
@@ -169,7 +169,7 @@ nav {
 .about-grid { display: grid; grid-template-columns: 220px 1fr; gap: 64px; margin-top: 48px; align-items: start; max-width: 760px; }
 
 .about-photo {
-  width: 100%; aspect-ratio: 3/4;
+  width: 100%; aspect-ratio: 4/5; min-height: 100%;
   border-radius: 10px; overflow: hidden;
   background: var(--off); border: 1px solid var(--border);
 }
@@ -210,7 +210,7 @@ nav {
 .capture h2 { font-size: clamp(28px, 3.5vw, 48px); font-weight: 600; letter-spacing: -1.2px; color: var(--white); margin-bottom: 14px; line-height: 1.1; }
 .capture p { font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.6); max-width: 400px; margin: 0 auto 36px; line-height: 1.65; }
 
-.capture-form { display: flex; gap: 10px; justify-content: center; max-width: 500px; margin: 0 auto; }
+.capture-form { display: flex; gap: 10px; justify-content: center; max-width: 440px; margin: 0 auto; }
 .capture-form input[type="email"] {
   flex: 1; padding: 13px 18px;
   font-family: 'DM Sans', sans-serif; font-size: 15px;
@@ -234,6 +234,7 @@ nav {
 }
 .hero-video-link:hover { color: var(--ink); }
 .video-section { padding: 80px 64px; border-bottom: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; text-align: center; }
+.video-section.alt { background: var(--off); }
 .video-section h2 { font-size: clamp(24px, 2.5vw, 36px); font-weight: 600; letter-spacing: -0.8px; margin-bottom: 10px; }
 .video-section p { font-size: 15px; color: var(--muted); font-weight: 300; max-width: 480px; margin-bottom: 32px; line-height: 1.65; }
 .video-wrap { width: 100%; max-width: 680px; aspect-ratio: 16/9; background: var(--off); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 12px; }
@@ -241,6 +242,23 @@ nav {
 .video-placeholder { display: flex; flex-direction: column; align-items: center; gap: 10px; }
 .video-placeholder svg { width: 48px; height: 48px; }
 .video-placeholder span { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); opacity: 0.4; }
+/* ── CASE STUDIES ── */
+.cs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+.cs-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.cs-card-head { padding: 28px 32px 20px; border-bottom: 1px solid var(--border); }
+.cs-tag { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--terra); margin-bottom: 12px; }
+.cs-title { font-size: 20px; font-weight: 600; letter-spacing: -0.4px; line-height: 1.2; margin-bottom: 8px; }
+.cs-context { font-size: 13px; color: var(--muted); font-weight: 300; line-height: 1.6; }
+.cs-card-body { padding: 24px 32px; }
+.cs-section-lbl { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; margin-top: 20px; }
+.cs-section-lbl:first-child { margin-top: 0; }
+.cs-text { font-size: 14px; font-weight: 300; color: var(--muted); line-height: 1.7; }
+.cs-findings { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.cs-findings li { font-size: 13px; padding-left: 16px; position: relative; line-height: 1.5; color: var(--ink); }
+.cs-findings li::before { content: '+'; position: absolute; left: 0; color: var(--terra); font-family: 'DM Mono', monospace; font-size: 12px; }
+.cs-result { background: var(--off); border-radius: 6px; padding: 14px 18px; margin-top: 8px; font-size: 14px; font-weight: 400; line-height: 1.6; color: var(--ink); }
+.cs-result strong { color: var(--accent-dk); font-weight: 600; }
+
 /* ── FOOTER ── */
 footer { padding: 28px 64px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
 .footer-logo { font-size: 16px; font-weight: 700; letter-spacing: -0.3px; }
@@ -274,8 +292,8 @@ footer { padding: 28px 64px; border-top: 1px solid var(--border); display: flex;
   <a href="#" class="nav-logo">zone studio</a>
   <ul class="nav-links">
     <li><a href="#services">services</a></li>
+    <li><a href="#work">work</a></li>
     <li><a href="#about">about</a></li>
-    <li><a href="#how">process</a></li>
     <li><a href="#contact" class="nav-cta">book a call</a></li>
   </ul>
 </nav>
@@ -289,7 +307,7 @@ footer { padding: 28px 64px; border-top: 1px solid var(--border); display: flex;
       <a href="#contact" class="btn-accent">let's chat</a>
       <div class="hero-note">
         <span class="avail-dot"></span>
-        3 spots open in March
+        2 spots open in March
       </div>
     </div>
     <a href="#video" class="hero-video-link">not sure if we’re a fit? watch a 2-min intro first →</a>
@@ -332,7 +350,7 @@ footer { padding: 28px 64px; border-top: 1px solid var(--border); display: flex;
       <div class="svc-bar"></div>
       <div class="svc-tier">tier 01 — one-time</div>
       <div class="svc-name">Data Audit</div>
-      <div class="svc-price">from $300</div>
+      <div class="svc-price">contact for pricing</div>
       <p class="svc-desc">A comprehensive read of your market and your own data — app reviews, customer feedback, competitor moves, pricing. Structured into something you can actually use.</p>
       <ul class="svc-list">
         <li>Competitor mapping (5–8 players)</li>
@@ -348,7 +366,7 @@ footer { padding: 28px 64px; border-top: 1px solid var(--border); display: flex;
       <div class="svc-bar hot"></div>
       <div class="svc-tier">tier 02 — monthly · most popular</div>
       <div class="svc-name">Intelligence System</div>
-      <div class="svc-price">$800 / month</div>
+      <div class="svc-price">contact for pricing</div>
       <p class="svc-desc">An ongoing intelligence system built around your business — market signals, competitor tracking, customer data trends, and a custom dashboard that's yours to keep.</p>
       <ul class="svc-list">
         <li>Everything in Data Audit</li>
@@ -364,7 +382,7 @@ footer { padding: 28px 64px; border-top: 1px solid var(--border); display: flex;
       <div class="svc-bar"></div>
       <div class="svc-tier">tier 03 — retainer</div>
       <div class="svc-name">Intelligence Partner</div>
-      <div class="svc-price">$1,500 / month</div>
+      <div class="svc-price">contact for pricing</div>
       <p class="svc-desc">Full-scope partnership. Data strategy, AI tool selection, competitive research on demand — actively in your corner, not just sending reports.</p>
       <ul class="svc-list">
         <li>Everything in Intelligence System</li>
@@ -379,8 +397,69 @@ footer { padding: 28px 64px; border-top: 1px solid var(--border); display: flex;
   </div>
 </div>
 
+<!-- CASE STUDIES -->
+<div class="section alt" id="work">
+  <div class="lbl">case studies</div>
+  <h2 class="section-h">What the work actually looks like.</h2>
+  <div class="cs-grid">
+
+    <div class="cs-card">
+      <div class="cs-card-head">
+        <div class="cs-tag">competitive intelligence</div>
+        <div class="cs-title">Mapping the market before building the product</div>
+        <div class="cs-context">B2B SaaS · Early-stage founder · Pre-launch</div>
+      </div>
+      <div class="cs-card-body">
+        <div class="cs-section-lbl">the situation</div>
+        <p class="cs-text">A solo founder was three months into building a project management tool for creative agencies. She had a rough sense of the competitive landscape but was making pricing and positioning decisions based on vibes — a few competitor websites she'd bookmarked, nothing structured.</p>
+        <div class="cs-section-lbl">what we did</div>
+        <ul class="cs-findings">
+          <li>Mapped 11 direct and adjacent competitors across pricing, features, and messaging</li>
+          <li>Pulled and analysed 200+ app store and G2 reviews to surface what users actually complained about</li>
+          <li>Identified the specific language customers used to describe their frustrations</li>
+          <li>Benchmarked feature sets to find gaps no one was addressing</li>
+        </ul>
+        <div class="cs-section-lbl">what we found</div>
+        <ul class="cs-findings">
+          <li>The $49–$79/mo tier was completely uncontested — everyone priced either below $30 or above $100</li>
+          <li>The top complaint across all competitors: onboarding took too long, users churned in week one</li>
+          <li>One competitor had just raised and was visibly shifting upmarket — leaving SMB customers underserved</li>
+        </ul>
+        <div class="cs-result"><strong>The outcome:</strong> She launched at $59/mo with onboarding as her lead differentiator — positioning built entirely around the gap the research revealed, not a guess.</div>
+      </div>
+    </div>
+
+    <div class="cs-card">
+      <div class="cs-card-head">
+        <div class="cs-tag">internal data strategy</div>
+        <div class="cs-title">Turning two years of user data into a growth roadmap</div>
+        <div class="cs-context">B2B Platform · Scale-up · Post-product-market fit</div>
+      </div>
+      <div class="cs-card-body">
+        <div class="cs-section-lbl">the situation</div>
+        <p class="cs-text">A scale-up had been collecting user data for two years — usage logs, support tickets, churn records, NPS responses. The data existed, but no one had ever built a system to actually read it. The team was making retention and expansion decisions based on quarterly anecdotes from sales calls.</p>
+        <div class="cs-section-lbl">what we did</div>
+        <ul class="cs-findings">
+          <li>Audited all existing data sources and mapped what was captured vs. what was missing</li>
+          <li>Built a unified view connecting product usage, support history, and revenue data</li>
+          <li>Ran pattern analysis across churned vs. retained accounts to isolate early warning signals</li>
+          <li>Identified the three user behaviours that consistently predicted 90-day churn</li>
+        </ul>
+        <div class="cs-section-lbl">what we found</div>
+        <ul class="cs-findings">
+          <li>Accounts that didn't complete a specific setup step in week one churned at 3× the rate</li>
+          <li>Their highest-value segment was using a feature the team considered secondary</li>
+          <li>Support ticket volume was a lagging indicator — the real signal was login frequency drop-off</li>
+        </ul>
+        <div class="cs-result"><strong>The outcome:</strong> A prioritised action plan — a targeted onboarding intervention, a repositioned feature, and an early warning dashboard the team could actually use. No new hires required.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <!-- ABOUT -->
-<div class="section alt" id="about">
+<div class="section" id="about">
   <div class="lbl">about</div>
   <div class="about-grid">
 
@@ -394,71 +473,16 @@ footer { padding: 28px 64px; border-top: 1px solid var(--border); display: flex;
 
     <div class="about-text">
       <h2>Hey, I'm Kate.</h2>
-      <p>I build intelligence systems for startups and create content that makes complex data ideas actually make sense.</p>
-      <p>My background is unusual: <strong>design + analytics</strong>. That means I know how to make data systems people actually want to use — and I know which questions actually drive decisions.</p>
-      <p>If your team is making decisions based on gut feel because getting real answers takes too long, let's talk.</p>
+      <p>I have one goal: help solo founders make use of their data and not get lost in all the AI stuff.</p>
+      <p>My background is unusual: <strong>design + analytics + AI</strong>. That means I know how to make data systems people actually want to use — and I know which questions actually drive decisions.</p>
+      <p style="margin-top: 20px;"><a href="https://beacons.ai/kateintheloops" target="_blank" style="font-size: 14px; font-weight: 500; color: var(--accent); text-decoration: none;">find me online →</a></p>
     </div>
 
-  </div>
-</div>
-
-<!-- HOW -->
-<div class="section" id="how">
-  <div class="lbl">process</div>
-  <h2 class="section-h" style="margin-bottom: 0;">How it actually works.</h2>
-  <div class="how-grid">
-    <div class="steps">
-      <div class="step">
-        <span class="step-n">01</span>
-        <div>
-          <div class="step-title">You share your context</div>
-          <div class="step-desc">What you're building, who you're selling to, what decisions are live right now. A short brief — 15 minutes.</div>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-n">02</span>
-        <div>
-          <div class="step-title">I map your zone</div>
-          <div class="step-desc">AI-powered research plus structured analysis. Competitors, customer data, pricing benchmarks, market signals — interpreted, not just collected.</div>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-n">03</span>
-        <div>
-          <div class="step-title">You get a tight deliverable</div>
-          <div class="step-desc">No 40-slide decks. A focused document with clear takeaways — written for a founder, not a boardroom.</div>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-n">04</span>
-        <div>
-          <div class="step-title">You make better moves</div>
-          <div class="step-desc">Price smarter, position sharper, decide faster. Ongoing tiers keep your intelligence current as the market shifts.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="sample-card">
-      <div class="sc-head">
-        <span class="sc-head-lbl">sample · intelligence snapshot</span>
-        <span class="sc-badge">example output</span>
-      </div>
-      <div class="sc-body">
-        <div class="sc-row"><span class="sc-key">niche</span><span class="sc-val">B2B SaaS onboarding</span></div>
-        <div class="sc-row"><span class="sc-key">competitors tracked</span><span class="sc-val">7 players</span></div>
-        <div class="sc-row"><span class="sc-key">market avg. price</span><span class="sc-val">$89–$149/mo</span></div>
-        <div class="sc-row"><span class="sc-key">your position</span><span class="sc-val w">underpriced by ~30%</span></div>
-        <div class="sc-row"><span class="sc-key">top customer complaint</span><span class="sc-val r">onboarding too slow (48 reviews)</span></div>
-        <div class="sc-row"><span class="sc-key">unserved segment</span><span class="sc-val g">no-code founders, wide open</span></div>
-        <div class="sc-row"><span class="sc-key">competitor signal</span><span class="sc-val w">Appcues raising prices Q1</span></div>
-      </div>
-      <div class="sc-foot"><strong>recommendation:</strong> test a $129 tier for no-code founders before Appcues pivots — your own reviews show speed is the gap to close first.</div>
-    </div>
   </div>
 </div>
 
 <!-- VIDEO -->
-<div class="video-section" id="video">
+<div class="video-section alt" id="video">
   <div class="lbl">before you reach out</div>
   <h2>Is this the right fit?</h2>
   <p>Watch this 2-minute intro to understand exactly who I work with, what the engagement looks like, and who this is <em>not</em> for.</p>
@@ -479,12 +503,11 @@ footer { padding: 28px 64px; border-top: 1px solid var(--border); display: flex;
 <div class="capture" id="contact">
   <div id="capture-inner">
     <h2>Ready to know your zone?</h2>
-    <p>Drop your email and I'll take it from there. Let's get started within 72hrs (if you're as excited as I am)</p>
-    <!-- Tally -->
-    <div class="capture-form" id="capture-form">
+    <p>Drop your email and I'll take it from there. Let's get started asap (if you're as excited as I am).</p>
+    <div style="max-width: 480px; margin: 0 auto; width: 100%;">
       <iframe data-tally-src="https://tally.so/embed/vGBlbd?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="342" frameborder="0" marginheight="0" marginwidth="0" title="email capture"></iframe>
-      <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
-    </div> 
+      <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')===null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+    </div>
   </div>
 </div>
 
@@ -495,26 +518,7 @@ footer { padding: 28px 64px; border-top: 1px solid var(--border); display: flex;
   <div class="footer-note">2026</div>
 </footer>
 
-<script>
-const form = document.getElementById('capture-form');
-const success = document.getElementById('capture-success');
-const captureInner = document.getElementById('capture-inner');
-if (form) {
-  form.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    try {
-      const res = await fetch(form.action, {
-        method: 'POST', body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
-      if (res.ok) {
-        captureInner.style.display = 'none';
-        success.style.display = 'block';
-      }
-    } catch(err) { form.submit(); }
-  });
-}
-</script>
+
 
 </body>
 </html>
